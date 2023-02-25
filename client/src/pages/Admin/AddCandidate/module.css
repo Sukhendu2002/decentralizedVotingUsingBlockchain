@@ -1,0 +1,128 @@
+.ctaa {
+  position: relative;
+  margin: 25px auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+}
+
+.ctaa:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.ctaa span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.ctaa svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.ctaa:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.ctaa:hover svg {
+  transform: translateX(0);
+}
+
+.ctaa:active {
+  transform: scale(0.95);
+}
+
+.containerr {
+  width: 190px;
+  height: 254px;
+  background: transparent;
+  position: relative;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.438);
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.cardd {
+  cursor: default;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  /* text-transform: uppercase; */
+  letter-spacing: 2px;
+  color: #212121;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  transition: all ease 0.3s;
+  flex-direction: column;
+}
+
+.containerr::after,
+.containerr::before {
+  width: 100px;
+  height: 100px;
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transition: 0.5s linear;
+}
+
+.containerr::after {
+  top: -20px;
+  left: -20px;
+  background-color: #f9a826;
+  animation: animFirst 5s linear infinite;
+}
+
+.containerr::before {
+  background-color: #6e3ff2;
+  top: 70%;
+  left: 70%;
+  animation: animSecond 5s linear infinite;
+  animation-delay: 3s;
+}
+
+.containerr:hover {
+  box-shadow: 0px 0px 10px rgba(0, 77, 32, 0.432);
+}
+
+.containerr:hover::after {
+  left: 80px;
+  transform: scale(1.2);
+}
+
+.containerr:hover::before {
+  left: -10px;
+  transform: scale(1.2);
+}
