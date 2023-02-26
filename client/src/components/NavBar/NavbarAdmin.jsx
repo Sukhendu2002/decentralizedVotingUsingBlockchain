@@ -30,9 +30,9 @@ function NavbarAdmin() {
     setactive(false);
   };
   return (
-    <Container className="header-fixed">
-      <Link to="/" className="logo">
-        <span>Admin </span>
+    <Container className="header-fixed border-b-2 bg-[#e8e7e7]">
+      <Link to="/" className="text-[#ffc107] font-extrabold text-5xl hover:text-[#f2cf66]">
+        <span className="text-6xl font-serif font-extrabold ">Admin </span>
       </Link>
 
       <input
@@ -46,6 +46,7 @@ function NavbarAdmin() {
 
       <nav className={active ? "active" : ""}>
         <NavHashLink
+        className="bg-[#2d4b6e] text-[#fff] py-2 px-4 rounded-2xl hover:bg-[#234975]"
           to="/Verification"
           onClick={closeMenu}
           style={{
@@ -56,6 +57,7 @@ function NavbarAdmin() {
         </NavHashLink>
 
         <NavHashLink
+        className="bg-[#2d4b6e] text-[#fff] py-2 px-4 rounded-2xl hover:bg-[#234975]"
           smooth
           to="/AddCandidate"
           style={{
@@ -66,6 +68,7 @@ function NavbarAdmin() {
           Add Candidate
         </NavHashLink>
         <NavHashLink
+        className="bg-[#2d4b6e] text-[#fff] py-2 px-4 rounded-2xl hover:bg-[#234975]"
           smooth
           to="/Registration"
           style={{
@@ -76,6 +79,7 @@ function NavbarAdmin() {
           Registration
         </NavHashLink>
         <NavHashLink
+        className="bg-[#2d4b6e] text-[#fff] py-2 px-4 rounded-2xl hover:bg-[#234975]"
           smooth
           to="/Voting"
           style={{
@@ -86,6 +90,7 @@ function NavbarAdmin() {
           Voting
         </NavHashLink>
         <NavHashLink
+        className="bg-[#2d4b6e] text-[#fff] py-2 px-4 rounded-2xl hover:bg-[#234975]"
           smooth
           to="/Result"
           style={{

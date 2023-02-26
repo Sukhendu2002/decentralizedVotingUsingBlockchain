@@ -16,17 +16,12 @@ function UserHome(props) {
         }}
       >
         <h1
-          className="d-xxl-flex justify-content-xl-center"
-          style={{
-            // text-align: center;margin-top: 11px;
-            textAlign: "center",
-            marginTop: "11px",
-          }}
+          className="d-xxl-flex justify-content-xl-center m-auto text-8xl text-[#ccc107]"
         >
           {props.el.electionTitle}
         </h1>
         <p
-          className="d-xxl-flex justify-content-xxl-center"
+          className="d-xxl-flex justify-content-xxl-center text-4xl text-[#9b9a9a]"
           style={{
             // "text-align: center;"
             textAlign: "center",

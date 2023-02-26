@@ -64,18 +64,6 @@ const Verification = () => {
     await ElectionInstance.methods
       .verifyVoter(verifiedStatus, address)
       .send({ from: account });
-    // await axios
-    //   .post("http://localhost:5000/send", {
-    //     number: "+91" + voters[0]["phone"],
-    //     message:
-    //       "You have been successfully registered as a voter, You can vote now",
-    //   })
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
 
     window.location.reload();
   };
@@ -103,10 +91,10 @@ const Verification = () => {
     <Container>
       <NavbarAdmin />
       <div className="container-main">
-        <h3>Verification</h3>
-        <small>Total Voters: {voterCount || 0}</small>
+        <h3 className="text-7xl text-[#e6d041] mb-4">Verification</h3>
+        <small className="text-[#25649b] text-5xl mt-4">Total Voters: {voterCount || 0}</small>
         {voterCount < 1 ? (
-          <div className="container-item info">None has registered yet.</div>
+          <div className="text-4xl mt-4">None has registered yet...</div>
         ) : (
           <>
             <div className="container-item info">
