@@ -76,31 +76,31 @@ npm start
 
 #### Landing Page
 
-![1677394651676](image/README/1677394651676.png)
+![1677394651676](https://user-images.githubusercontent.com/76804228/221397470-350ccf67-9f76-48ca-bc36-fbe3009e4af2.png)
 
 #### Add a new candidate
 
-![1677394929645](image/README/1677394929645.png)
+![1677394929645](https://user-images.githubusercontent.com/76804228/221397485-dcc9b796-4212-41e3-9d49-0aa21564950a.png)
 
 #### Initialize Voting
 
-![1677394973442](image/README/1677394973442.png)
+![1677394973442](https://user-images.githubusercontent.com/76804228/221397495-aa652c0d-e28a-4efc-a0b6-80a7ff20a7b1.png)
 
 #### Voter Registration page
 
-![1677395069893](image/README/1677395069893.png)
+![1677395069893](https://user-images.githubusercontent.com/76804228/221397502-1a7035a4-2e7a-4e64-8300-1606bf4efbc2.png)
 
 #### Verification page from the Admin side
 
-![1677395387524](image/README/1677395387524.png)
+![1677395387524](https://user-images.githubusercontent.com/76804228/221397507-1ef7944a-259f-45f6-8b99-06da9fe81405.png)
 
 #### Voting page
 
-![1677395441904](image/README/1677395441904.png)
+![1677395441904](https://user-images.githubusercontent.com/76804228/221397511-45ceb9b9-85f8-4b21-9cd8-7f3552352399.png)
 
 #### Result Page
 
-![1677395513220](image/README/1677395513220.png)
+![1677395513220](https://user-images.githubusercontent.com/76804228/221397514-2d5b503a-7988-4096-879f-7ccb11667b69.png)
 
 
 ## Conclusion
