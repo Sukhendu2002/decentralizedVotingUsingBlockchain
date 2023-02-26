@@ -24,4 +24,5 @@ jobs:
         run: npm install --force
 
       - name: Build application
-        run: npm run dev
+        run: npm run start
+
