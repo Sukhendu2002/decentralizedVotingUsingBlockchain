@@ -1470,12 +1470,12 @@
     "80001": {
       "events": {},
       "links": {},
-      "address": "0x69F801211941aE84D9f615BfAf4a79D2900E9d68",
-      "transactionHash": "0xa367f7dce4d215d15d15bf2a21f466acb74098ece4486334b5e3e385ad4286bc"
+      "address": "0xB7574E397DF604e454cc35C0fd8eD76b0edd01C4",
+      "transactionHash": "0x21a608a57d4f3f466cc3a857c4851899aee0fb101e48ae384c59f8ebeaf0b1c2"
     }
   },
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-02-26T04:20:44.970Z",
+  "updatedAt": "2023-02-26T06:35:34.893Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
