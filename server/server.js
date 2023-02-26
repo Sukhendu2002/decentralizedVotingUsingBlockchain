@@ -10,7 +10,7 @@ const fs = require("fs");
 const path = require("path");
 const app = express();
 const accountSid = "AC6af9ec51bdc5af20f40de5d87fe45d2b";
-const authToken = "718f11872914ce15da3c2f3c4660aece";
+const authToken = "d69fdbba7fea593e2a1c02fe3d480a1e";
 const client = require("twilio")(accountSid, authToken);
 
 app.use(

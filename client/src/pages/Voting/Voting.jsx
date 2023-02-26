@@ -11,6 +11,7 @@ import {
   ELECTION_CONTRACT_ADDRESS,
   ELECTION_CONTRACT_ABI,
 } from "../../utils/constance";
+import axios from "axios";
 
 const Voting = () => {
   const [ElectionInstance, setElectionInstance] = useState(undefined);
@@ -111,6 +112,19 @@ const Voting = () => {
       .once("receipt", (receipt) => {
         console.log(receipt);
         window.alert("Vote casted successfully.");
+      });
+    await axios
+      .post("http://localhost:5000/send", {
+        number: "+91" + voterData?.phone_number,
+        message:
+          "You have been successfully registered as a voter, You can vote now",
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        window.location.reload();
       });
     window.location.reload();
   };

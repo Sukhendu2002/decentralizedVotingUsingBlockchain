@@ -199,6 +199,7 @@ const Registration = () => {
             })
             .catch((err) => {
               console.log(err);
+              window.location.reload();
             });
         }
         try {
