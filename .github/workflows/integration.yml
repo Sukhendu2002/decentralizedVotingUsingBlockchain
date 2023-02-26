@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: "14.x"
 
-      - name: change dir
+      - name: change directory
         run: cd server
 
       - name: Install dependencies
@@ -25,4 +25,3 @@ jobs:
 
       - name: Build application
         run: npm run start
-
