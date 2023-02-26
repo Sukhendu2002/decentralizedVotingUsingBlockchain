@@ -64,6 +64,18 @@ const Verification = () => {
     await ElectionInstance.methods
       .verifyVoter(verifiedStatus, address)
       .send({ from: account });
+    // await axios
+    //   .post("http://localhost:5000/send", {
+    //     number: "+91" + voters[0]["phone"],
+    //     message:
+    //       "You have been successfully registered as a voter, You can vote now",
+    //   })
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
 
     window.location.reload();
   };

@@ -146,7 +146,7 @@ const Registration = () => {
   const registerAsVoter = async (event) => {
     event.preventDefault();
     setRegistering(true);
-    
+
     console.log("Registering as voter");
     const current_modified_picture = await sendFileToIPFS(
       dataURLtoFile(voterData.current_picture, "image.png")
@@ -188,6 +188,18 @@ const Registration = () => {
       .then(async (res) => {
         if (res.data.result[0]._label === voterData?.email) {
           verified = true;
+          await axios
+            .post("http://localhost:5000/send", {
+              number: "+91" + voterData?.phone_number,
+              message:
+                "You have been successfully registered as a voter, You can vote now",
+            })
+            .then((res) => {
+              console.log(res);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         }
         try {
           await electionInstance.methods
