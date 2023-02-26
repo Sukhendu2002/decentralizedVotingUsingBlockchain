@@ -115,9 +115,11 @@ const Voting = () => {
       });
     await axios
       .post("http://localhost:5000/send", {
-        number: "+91" + voterData?.phone_number,
+        number: "+91" + currentVoter.phone,
         message:
-          "You have been successfully registered as a voter, You can vote now",
+          "You have successfully casted your vote for " +
+          currentVoter.name +
+          ".",
       })
       .then((res) => {
         console.log(res);
