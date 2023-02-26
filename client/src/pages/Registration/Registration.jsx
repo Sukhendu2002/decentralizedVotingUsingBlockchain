@@ -146,7 +146,7 @@ const Registration = () => {
   const registerAsVoter = async (event) => {
     event.preventDefault();
     setRegistering(true);
-    
+
     console.log("Registering as voter");
     const current_modified_picture = await sendFileToIPFS(
       dataURLtoFile(voterData.current_picture, "image.png")
@@ -188,6 +188,19 @@ const Registration = () => {
       .then(async (res) => {
         if (res.data.result[0]._label === voterData?.email) {
           verified = true;
+          await axios
+            .post("http://localhost:5000/send", {
+              number: "+91" + voterData?.phone_number,
+              message:
+                "You have been successfully registered as a voter, You can vote now",
+            })
+            .then((res) => {
+              console.log(res);
+            })
+            .catch((err) => {
+              console.log(err);
+              window.location.reload();
+            });
         }
         try {
           await electionInstance.methods
@@ -233,9 +246,9 @@ const Registration = () => {
             className="container-item info"
             style={{ display: "flex", justifyContent: "space-between" }}
           >
-            <p className="text-[#ccc407] text-6xl mb-4"
-            >
-              Total Registered Voters: <strong className="text-[#171717]">{voterCount}</strong>
+            <p className="text-[#ccc407] text-6xl mb-4">
+              Total Registered Voters:{" "}
+              <strong className="text-[#171717]">{voterCount}</strong>
             </p>
           </div>
           <div
@@ -247,10 +260,7 @@ const Registration = () => {
             //   alignItems: "center",
             // }}
           >
-            <h3 className="font-bold text-7xl mb-4"
-            >
-              Registration
-            </h3>
+            <h3 className="font-bold text-7xl mb-4">Registration</h3>
             <small className="text-5xl mt-4">Register to vote.</small>
             <div
               className="container-item"
@@ -375,9 +385,7 @@ const Registration = () => {
                       onChange={(e) => {
                         //only image files are allowed
                         // console.log(e.target.files)
-                        if (
-                          e.target.files[0].type.includes("image")
-                        ) {
+                        if (e.target.files[0].type.includes("image")) {
                           setVoterData({
                             ...voterData,
                             voter_id: e.target.files[0],
@@ -439,27 +447,27 @@ const Registration = () => {
                   provided Phone number nub does not matches the account address
                   registered in admins catalogue.
                 </p>
-                {registering ? <Loader className="mb-8 text-sm"/> : (
-
-               
-                <button
-                  className="my-4 w-1/2 border-x border-y rounded-2xl p-2 font-semibold space-x-2 cursor-pointer border-[#f09b51] text-[#5c5b5b] hover:bg-[#f09b51] hover:text-[#fff]"
-                  disabled={
-                    voterData?.name?.length === 0 ||
-                    voterData?.email?.length === 0 ||
-                    voterData?.phone_number?.length === 0 ||
-                    voterData?.voter_id?.length === 0 ||
-                    voterData?.voterId_number?.length === 0 ||
-                    voterData?.current_picture?.length === 0 ||
-                    voterData?.phone_number?.length !== 10 ||
-                    currentVoter["isRegistered"] 
-                  }
-                  type="submit"
-                >
-                  {currentVoter["isRegistered"]
-                    ? "Registered"
-                    : "Register as voter"}
-                </button>
+                {registering ? (
+                  <Loader className="mb-8 text-sm" />
+                ) : (
+                  <button
+                    className="my-4 w-1/2 border-x border-y rounded-2xl p-2 font-semibold space-x-2 cursor-pointer border-[#f09b51] text-[#5c5b5b] hover:bg-[#f09b51] hover:text-[#fff]"
+                    disabled={
+                      voterData?.name?.length === 0 ||
+                      voterData?.email?.length === 0 ||
+                      voterData?.phone_number?.length === 0 ||
+                      voterData?.voter_id?.length === 0 ||
+                      voterData?.voterId_number?.length === 0 ||
+                      voterData?.current_picture?.length === 0 ||
+                      voterData?.phone_number?.length !== 10 ||
+                      currentVoter["isRegistered"]
+                    }
+                    type="submit"
+                  >
+                    {currentVoter["isRegistered"]
+                      ? "Registered"
+                      : "Register as voter"}
+                  </button>
                 )}
                 {/* {registering && <h1><Loader/></h1>} */}
               </form>
@@ -492,7 +500,9 @@ export function loadCurrentVoter(voter, isRegistered) {
           marginTop: "10px",
         }}
       >
-        <center className="text-5xl mt-4 font-bold text-[#ccc407]">Your Ragistration Status</center>
+        <center className="text-5xl mt-4 font-bold text-[#ccc407]">
+          Your Ragistration Status
+        </center>
       </div>
       <div
         className={"container-list " + (isRegistered ? "success" : "attention")}
