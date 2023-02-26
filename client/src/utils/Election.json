@@ -26075,12 +26075,12 @@
     "80001": {
       "events": {},
       "links": {},
-      "address": "0x5753A7D7B4e9351b049336e2194B5E9539Bb1454",
-      "transactionHash": "0x0d1540e40602dcca47e219f5c495c63039dc7781044a2a5c1fb6df54b0e8a576"
+      "address": "0x134eD210a705133E8458cb9Db692208AD2dcfDBD",
+      "transactionHash": "0xc7a63146b1dacb59a81038add5295a3a77a4d6407b6ab068a7c774d0b8041eb7"
     }
   },
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-02-26T07:23:22.385Z",
+  "updatedAt": "2023-02-26T07:30:28.656Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
