@@ -136,118 +136,54 @@ const AddCandidate = () => {
         <Container>
           {isAdmin ? <NavbarAdmin /> : <Navbar />}
           {isAdmin ? (
-            <div className="container-main">
-              <p
-                style={{
-                  textAlign: "center",
-                  marginBottom: "0.5rem",
-                  fontSize: "4rem",
-                }}
+            <>
+            <small
+            className="text-5xl font-medium font-sans text-[#234975] hover:cursor-pointer hover:text-[#2b66aa]"
+>
+  Total Candidates:<strong className="text-[#ffc107] hover:no-underline"> {candidateCount}</strong>
+</small>
+            <div className=" w-1/2 m-auto shadow-[#c6c4c4] shadow-inner pt-4">
+              <p className="text-center text-7xl mt-4 font-bold"
               >
                 Add a new candidate
               </p>
-              <small
-                style={{
-                  textAlign: "center",
-                  marginBottom: "0.5rem",
-                  fontSize: "1.5rem",
-                }}
-              >
-                Total candidates: {candidateCount}
-              </small>
+              <div className="flex items-center w-3/4 m-auto">
+<hr className="w-1/2 text-[#ffc107]"/><span className="">❌</span><hr className="w-1/2 text-[#ffc107]"/>
+              </div>
               <div className="container-item">
                 <form
-                  className="form"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: "100%",
-                  }}
+                  className="form px-8 py-2"
                 >
-                  <label
-                    className={"label-ac"}
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      width: "50%",
-                      fontSize: "1.9rem",
-                    }}
+                <div className="mb-2">
+                  {/* <label for="header" className="w-full block">Name</label> */}
+                  <input
+                    type="text"
+                    id="header"
+                    placeholder="Candidate Name"
+                    value={header}
+                    onChange={updateHeader}
+                    className="border-b-2 py-2 text-3xl my-4 border-[#878585] outline-none w-full text-[#ffc107]"
+                  />
+                </div>
+                <div className="mb-2">
+   {/* <label for="slogan" className="w-full block">Slogan</label> */}
+   <input
+     type="text"
+     id="slogan"
+     placeholder="Candidate's Slogan"
+     value={slogan}
+     onChange={updateSlogan}
+     className="border-b-2 py-2 text-3xl m-b-4 border-[#878585] outline-none w-full text-[#ffc107]"
+   />
+ </div>
+                  <div
+                  className="flex items-center mt-4 mb-2"
                   >
-                    Name
-                    <input
-                      className={"input-ac"}
-                      type="text"
-                      placeholder="eg. Marcus"
-                      value={header}
-                      onChange={updateHeader}
-                      style={{
-                        width: "100%",
-                        height: "40px",
-                        padding: "0.5rem",
-                        fontSize: "1.5rem",
-                        border: "1px solid",
-                        borderRadius: "0.5rem",
-                      }}
-                    />
-                  </label>
-                  <label
-                    className={"label-ac"}
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      width: "50%",
-                      marginTop: "1rem",
-                      fontSize: "1.9rem",
-                    }}
-                  >
-                    Slogan
-                    <input
-                      className={"input-ac"}
-                      type="text"
-                      placeholder="eg. It is what it is"
-                      value={slogan}
-                      onChange={updateSlogan}
-                      style={{
-                        width: "100%",
-                        height: "40px",
-                        padding: "0.5rem",
-                        fontSize: "1.5rem",
-                        border: "1px solid",
-                        borderRadius: "0.5rem",
-                      }}
-                    />
-                  </label>
-                  <span
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      width: "50%",
-                      marginTop: "1rem",
-                    }}
-                  >
+
                     <label
-                      className={"label-ac"}
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        width: "78%",
-                        marginTop: "1rem",
-                        fontSize: "1.9rem",
-                      }}
                     >
                       Image
                       <input
-                        className={"input-ac"}
                         type="file"
                         name="data"
                         onChange={(e) => {
@@ -260,90 +196,39 @@ const AddCandidate = () => {
                           }
                         }}
                         required
-                        style={{
-                          width: "100%",
-                          height: "40px",
-                          padding: "0.5rem",
-                          fontSize: "1.5rem",
-                          border: "1px solid",
-                          borderRadius: "0.5rem",
-                        }}
                       />
                     </label>
                     <button
-                      className="btn-add"
+                      className="px-4 py-2 text-[#234975] border-2 border-[#234975] rounded-lg font-bold hover:text-[#fff] hover:bg-[#234975]"
                       disabled={
                         fileImg === null ||
                         imageUploaded === true ||
                         imageLoading === true
                       }
                       onClick={sendFileToIPFS}
-                      style={{
-                        width: "20%",
-                        height: "100%",
-                        padding: "0.5rem",
-                        fontSize: "1.5rem",
-                        border: "1px solid",
-                        borderRadius: "0.5rem",
-                        marginTop: "3.8rem",
-                        // marginBottom: "1rem",
-                      }}
                     >
                       {imageLoading ? "Uploading..." : "Upload Image"}
                     </button>
 
                     {imageUploaded ? (
                       <img
+                      className="w-16 duration-1000 transform-cpu origin-[1%-99%] ml-8 border-2 rounded-full border-[#207f42] py-2"
                         src={check}
                         alt="Candidate"
-                        style={{
-                          width: "25px",
-                          height: "25px",
-                          marginTop: "4rem",
-                        }}
                       />
                     ) : null}
                     {imageLoading ? (
                       <img
+                      className="w-16 ml-8 "
                         src={loading}
                         alt="Candidate"
-                        style={{
-                          width: "25px",
-                          height: "25px",
-                          marginTop: "4rem",
-                        }}
                       />
                     ) : null}
-                  </span>
-
-                  {/* <button
-                    className="btn-add"
-                    disabled={header.length < 3 || header.length > 21}
-                    onClick={addCandidate}
-                    style={{
-                      width: "30%",
-                      height: "100%",
-                      padding: "0.5rem",
-                      fontSize: "1.5rem",
-                      border: "1px solid",
-                      borderRadius: "0.5rem",
-                      marginTop: "1rem",
-                      marginBottom: "1rem",
-                    }}
-                  >
-                    Add
-                  </button> */}
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      gap: "1rem",
-                    }}
+                  </div>
+                  <div className="flex items-center"
                   >
                     <button
-                      className="ctaa"
+                      className="ctaa flex items-center"
                       disabled={
                         header.length < 3 ||
                         header.length > 21 ||
@@ -359,8 +244,8 @@ const AddCandidate = () => {
                       </svg>
                     </button>
                     <button
-                      className="ctaa"
-                      disabled={candidateCount < 1}
+                      className="ctaa flex items-center"
+                      disabled={candidateCount < 2}
                       onClick={async (e) => {
                         e.preventDefault();
                         navigate("/", {
@@ -380,29 +265,20 @@ const AddCandidate = () => {
                 </form>
               </div>
             </div>
+            </>
           ) : (
             <div className="container-main">
               <p
-                style={{
-                  textAlign: "center",
-                  marginBottom: "1rem",
-                  fontSize: "4rem",
-                }}
               >
                 You are not allowed to access this page
               </p>
             </div>
           )}
-          <div className="container-main" style={{ borderTop: "1px solid" }}>
+          <div className="container-main mt-6">
             <div
               className="container-item info"
-              style={{
-                fontSize: "2rem",
-                marginBottom: "1rem",
-                marginTop: "1rem",
-              }}
             >
-              <center>Candidates List</center>
+              <center className="font-bold text-5xl text-[#ccc107] border-[#ccc107] border-b-2 rounded-sm">Candidates List</center>
             </div>
             {candidates.length < 1 ? (
               <div className="container-item alert">
@@ -410,18 +286,11 @@ const AddCandidate = () => {
               </div>
             ) : (
               <div
-                className="container-item"
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                }}
+                className="container-item m-auto py-8 flex"
               >
                 {candidates.map((candidate) => {
                   return (
-                    <div className="containerr" key={candidate[0]}>
+                    <div className="containerr m-auto" key={candidate[0]}>
                       <div className="cardd">
                         <img
                           src={`https://gateway.pinata.cloud/ipfs/${candidate["image"]}`}

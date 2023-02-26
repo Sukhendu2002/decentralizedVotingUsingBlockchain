@@ -1048,7 +1048,7 @@
   "sourceMap": "69:354:1:-:0;;;246:52;;;;;;;;;;280:10;272:5;;:18;;;;;;;;;;;;;;;;;;69:354;;;;;;",
   "deployedSourceMap": "69:354:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;123:39;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;96:20;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;306:114;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;123:39;;;;:::o;96:20::-;;;;;;;;;;;;:::o;306:114::-;222:5;;;;;;;;;;208:19;;:10;:19;;;204:26;;403:9:::1;376:24;:36;;;;204:26:::0;306:114;:::o;7:77:2:-;44:7;73:5;62:16;;7:77;;;:::o;90:118::-;177:24;195:5;177:24;:::i;:::-;172:3;165:37;90:118;;:::o;214:222::-;307:4;345:2;334:9;330:18;322:26;;358:71;426:1;415:9;411:17;402:6;358:71;:::i;:::-;214:222;;;;:::o;442:126::-;479:7;519:42;512:5;508:54;497:65;;442:126;;;:::o;574:96::-;611:7;640:24;658:5;640:24;:::i;:::-;629:35;;574:96;;;:::o;676:118::-;763:24;781:5;763:24;:::i;:::-;758:3;751:37;676:118;;:::o;800:222::-;893:4;931:2;920:9;916:18;908:26;;944:71;1012:1;1001:9;997:17;988:6;944:71;:::i;:::-;800:222;;;;:::o;1109:117::-;1218:1;1215;1208:12;1355:122;1428:24;1446:5;1428:24;:::i;:::-;1421:5;1418:35;1408:63;;1467:1;1464;1457:12;1408:63;1355:122;:::o;1483:139::-;1529:5;1567:6;1554:20;1545:29;;1583:33;1610:5;1583:33;:::i;:::-;1483:139;;;;:::o;1628:329::-;1687:6;1736:2;1724:9;1715:7;1711:23;1707:32;1704:119;;;1742:79;;:::i;:::-;1704:119;1862:1;1887:53;1932:7;1923:6;1912:9;1908:22;1887:53;:::i;:::-;1877:63;;1833:117;1628:329;;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\n\r\ncontract Migrations {\r\n    address public owner;\r\n    uint256 public last_completed_migration;\r\n\r\n    modifier restricted() {\r\n        if (msg.sender == owner) _;\r\n    }\r\n\r\n    constructor()  {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    function setCompleted(uint256 completed) public restricted {\r\n        last_completed_migration = completed;\r\n    }\r\n}\r\n",
-  "sourcePath": "D:\\diversion\\contracts\\Migrations.sol",
+  "sourcePath": "C:\\Users\\pushk\\OneDrive\\Desktop\\diversion2\\decentralizedVotingUsingBlockchain\\contracts\\Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -1464,18 +1464,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xE03D093FC76D9Edb545198bf4b163CfcbadFd652",
-      "transactionHash": "0xd4a1eedea112279bee00f445e672fa60b7bb9af192e89d5b7161df2dacfcfaa3"
-    },
-    "80001": {
-      "events": {},
-      "links": {},
-      "address": "0x11752450a75700884a561855193b52a411e920E4",
-      "transactionHash": "0xf03719424a39e55378a0b3fca5b59801fc76a1b7cfc73467deca9a608bc6b4ca"
+      "address": "0xC114A3B783108401a35C73542F4B50d05139ED5d",
+      "transactionHash": "0xb1092b10b8bd23c4ce94e2324496b0e726d4a0cc999097dbb09e91357e01a481"
     }
   },
-  "schemaVersion": "3.4.11",
-  "updatedAt": "2023-02-26T02:38:25.034Z",
+  "schemaVersion": "3.4.12",
+  "updatedAt": "2023-02-26T04:02:22.270Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

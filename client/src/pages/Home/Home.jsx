@@ -272,19 +272,15 @@ const Home = () => {
               }}
             >
               <h3
-                style={{
-                  fontSize: "2rem",
-                }}
+              className="text-5xl" 
               >
                 Register Election
               </h3>
               {isAdmin ? (
                 <p
-                  style={{
-                    fontSize: "1.5rem",
-                  }}
+                className="text-3xl mt-2"
                 >
-                  Set up the election.
+                  (Set up the election.)
                 </p>
               ) : (
                 <p>Please wait for the admin to initialize the election.</p>

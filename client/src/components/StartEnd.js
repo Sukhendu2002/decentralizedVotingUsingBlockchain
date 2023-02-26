@@ -79,7 +79,7 @@ const StartEnd = (props) => {
             style={{ display: "block", marginTop: "20px" }}
           >
             <center>
-              <p>The election started.</p>
+              <p className="text-4xl">The election started...</p>
             </center>
           </div>
           <div
@@ -91,7 +91,7 @@ const StartEnd = (props) => {
               alignItems: "center",
             }}
           >
-            <button class="btn" type="submit" onClick={props.endElFn}>
+            <button className="btn text-3xl my-2 mx-4" type="submit" onClick={props.endElFn}>
               {" "}
               END
             </button>
