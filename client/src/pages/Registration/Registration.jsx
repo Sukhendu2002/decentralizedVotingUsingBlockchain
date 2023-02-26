@@ -161,7 +161,7 @@ const Registration = () => {
     formData.append("File1", voterData?.voter_id);
     formData.append("label", voterData?.email);
     await axios
-      .post("http://localhost:5000/post-face", formData, {
+      .post("http://139.59.20.128/post-face", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -180,7 +180,7 @@ const Registration = () => {
     const newFormData = new FormData();
     newFormData.append("File1", voterData?.current_picture);
     await axios
-      .post("http://localhost:5000/check-face", formData, {
+      .post("http://139.59.20.128/check-face", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -188,19 +188,19 @@ const Registration = () => {
       .then(async (res) => {
         if (res.data.result[0]._label === voterData?.email) {
           verified = true;
-          // await axios
-          //   .post("http://localhost:5000/send", {
-          //     number: "+91" + voterData?.phone_number,
-          //     message:
-          //       "You have been successfully registered as a voter, You can vote now",
-          //   })
-          //   .then((res) => {
-          //     console.log(res);
-          //   })
-          //   .catch((err) => {
-          //     console.log(err);
-          //     window.location.reload();
-          //   });
+          await axios
+            .post("http://139.59.20.128/send", {
+              number: "+91" + voterData?.phone_number,
+              message:
+                "You have been successfully registered as a voter, You can vote now",
+            })
+            .then((res) => {
+              console.log(res);
+            })
+            .catch((err) => {
+              console.log(err);
+              window.location.reload();
+            });
         }
         try {
           await electionInstance.methods
