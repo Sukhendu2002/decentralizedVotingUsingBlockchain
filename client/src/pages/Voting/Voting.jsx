@@ -113,21 +113,21 @@ const Voting = () => {
         console.log(receipt);
         window.alert("Vote casted successfully.");
       });
-    await axios
-      .post("http://localhost:5000/send", {
-        number: "+91" + currentVoter.phone,
-        message:
-          "You have successfully casted your vote for " +
-          currentVoter.name +
-          ".",
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-        window.location.reload();
-      });
+    // await axios
+    //   .post("http://localhost:5000/send", {
+    //     number: "+91" + currentVoter.phone,
+    //     message:
+    //       "You have successfully casted your vote for " +
+    //       currentVoter.name +
+    //       ".",
+    //   })
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     window.location.reload();
+    //   });
     window.location.reload();
   };
   const confirmVote = (id, header) => {
