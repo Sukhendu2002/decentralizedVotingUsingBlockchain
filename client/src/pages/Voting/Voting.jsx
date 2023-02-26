@@ -11,6 +11,7 @@ import {
   ELECTION_CONTRACT_ADDRESS,
   ELECTION_CONTRACT_ABI,
 } from "../../utils/constance";
+import axios from "axios";
 
 const Voting = () => {
   const [ElectionInstance, setElectionInstance] = useState(undefined);
