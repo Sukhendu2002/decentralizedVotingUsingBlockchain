@@ -92,7 +92,9 @@ const Verification = () => {
       <NavbarAdmin />
       <div className="container-main">
         <h3 className="text-7xl text-[#e6d041] mb-4">Verification</h3>
-        <small className="text-[#25649b] text-5xl mt-4">Total Voters: {voterCount || 0}</small>
+        <small className="text-[#25649b] text-5xl mt-4">
+          Total Voters: {voterCount || 0}
+        </small>
         {voterCount < 1 ? (
           <div className="text-4xl mt-4">None has registered yet...</div>
         ) : (
@@ -107,7 +109,7 @@ const Verification = () => {
                   marginBottom: "50px",
                 }}
               >
-                List of registered voters
+                List of Registered Voters
               </p>
             </div>
             <table className="table">
@@ -125,9 +127,9 @@ const Verification = () => {
                   <th scope="col">Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="items-center">
                 {voters.map((voter, index) => (
-                  <tr key={index}>
+                  <tr key={index} className="items-center">
                     <th scope="row">{index + 1}</th>
                     <td>{voter["voterAddress"].substring(0, 10) + "..."}</td>
                     <td>{voter["voterIdNumber"]}</td>
@@ -138,7 +140,7 @@ const Verification = () => {
                     <td>{voter["isVerified"] ? "Yes" : "No"}</td>
                     <td>
                       <button
-                        className="btn btn-success"
+                        className="text-[#285eb4] hover:underline"
                         onClick={() =>
                           window.open(
                             `https://gateway.pinata.cloud/ipfs/${voter["govId"]}`
@@ -151,7 +153,7 @@ const Verification = () => {
                     </td>
                     <td>
                       <button
-                        className="btn btn-success"
+                        className="text-[#285eb4] hover:underline"
                         onClick={() =>
                           window.open(
                             `https://gateway.pinata.cloud/ipfs/${voter["currentImage"]}`
@@ -164,7 +166,7 @@ const Verification = () => {
                     </td>
                     <td>
                       <button
-                        className="btn btn-success"
+                        className="rounded-md bg-[#285eb4] text-white px-4 py-2"
                         onClick={() => veryfyVoter(true, voter["voterAddress"])}
                         disabled={voter["isVerified"]}
                       >
