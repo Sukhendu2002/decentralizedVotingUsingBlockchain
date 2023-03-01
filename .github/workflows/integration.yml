@@ -21,7 +21,7 @@ jobs:
         run : ls
         
       - name: change directory
-        run: cd decentralizedVotingUsingBlockchain
+        run: cd server
       
       - name : list dir
         run : ls
