@@ -19,7 +19,10 @@ jobs:
 
       - name: change directory
         run: cd server
-
+      
+      - name: change directory again
+        run: cd server
+        
       - name: Install dependencies
         run: npm install --force
 
